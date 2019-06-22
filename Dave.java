@@ -593,6 +593,15 @@ public class Dave{
     System.gc();
   }
   //-----------------------------------------------\\
+  public static long millisecondiAdesso(){
+    return System.currentTimeMillis();
+  }
+  //-----------------------------------------------\\
+  public static long nanosecondiAdesso(){
+    return System.nanoTime();
+  }
+
+  //-----------------------------------------------\\
   public static void mergeSort(int [] array, int min, int max) {
     if((max-min)<20) {
       insertionSort(array,min,max);
