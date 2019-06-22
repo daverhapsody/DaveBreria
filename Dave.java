@@ -600,7 +600,6 @@ public class Dave{
   public static long nanosecondiAdesso(){
     return System.nanoTime();
   }
-
   //-----------------------------------------------\\
   public static void mergeSort(int [] array, int min, int max) {
     if((max-min)<20) {
