@@ -7,4 +7,4 @@ Vvb <3
 
 Robe utili veloci:
 - git config credential.helper store per evitare di riaggiuntere 1000 volte password ed id, 
--- se aggiungi dopo config --global lo setti per ogni git
+ - se aggiungi dopo config --global lo setti per ogni git
