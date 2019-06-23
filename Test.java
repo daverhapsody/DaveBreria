@@ -11,8 +11,7 @@ class Test extends Dave {
   	inizio = nanosecondiAdesso();
   	stampaACapo("Ciao");
   	fine = nanosecondiAdesso();
-  	stampaACapo(fine-inizio +" ns");inizio = nanosecondiAdesso();
-  	
+  	stampaACapo(fine-inizio +" ns");
   	separatore();
 
   	inizio = nanosecondiAdesso();
@@ -24,6 +23,7 @@ class Test extends Dave {
   	a = sommaRicorsiva(10,10);
   	fine = nanosecondiAdesso();
   	stampaACapo(fine-inizio +" ns");
+
   	inizio = nanosecondiAdesso();
   	a = 10+10;
   	fine = nanosecondiAdesso();
