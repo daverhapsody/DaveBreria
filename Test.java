@@ -6,5 +6,7 @@ class Test extends Dave {
   	a = 5;
   	b = 6 * a;
   	stampaACapo(b);
+  	b = b * 8 * a;
+  	stampaACapo(b);
   }  
 }
