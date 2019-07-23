@@ -1,5 +1,14 @@
 import java.util.*;
 public class Dave{
+  public static final String RESET = "\u001B[0m";
+  public static final String BLACK = "\u001B[30m";
+  public static final String RED = "\u001B[31m";
+  public static final String GREEN = "\u001B[32m";
+  public static final String YELLOW = "\u001B[33m";
+  public static final String BLUE = "\u001B[34m";
+  public static final String PURPLE = "\u001B[35m";
+  public static final String CYAN = "\u001B[36m";
+  public static final String WHITE = "\u001B[37m";
   private static final Scanner SCANNER = new Scanner(System.in);
   // Operazioni matematiche
   public static void stampa(Object obj) {
@@ -27,7 +36,7 @@ public class Dave{
       stampa("Errore, divisione per 0");
       return 0;
     } else
-      return a / b;
+    return a / b;
   }
   public static int somma(int a, int b) {
     return a + b;
@@ -42,7 +51,7 @@ public class Dave{
       stampa("Errore, divisione per 0");
       return 0;
     } else
-      return a / b;
+    return a / b;
   }
   // -----------------------------------------------\\
   public static double media(double somma, double numeroElementi) {
@@ -244,7 +253,7 @@ public class Dave{
     int length = vet.length;
     separatore();
     for (int i=0;i<length;i++) {
-      stampa("Posizione ["+i+"] = "+vet[i]+"\n");
+      stampa(YELLOW + "Posizione ["+i+"] = "+RESET+vet[i]+"\n");
     }
     separatore();
   }
@@ -253,7 +262,7 @@ public class Dave{
     int length = vet.length;
     separatore();
     for (int i=0;i<length;i++) {
-      stampa("Posizione ["+i+"] = "+vet[i]+"\n");
+      stampa(YELLOW + "Posizione ["+RESET+RED+i+RESET+YELLOW+"] = "+RESET+vet[i]+"\n");
     }
     separatore();
   }
@@ -276,19 +285,19 @@ public class Dave{
   //-----------------------------------------------\\
   public static void infoArray(double [] vet){
     stampaArray(vet);
-    stampa("Somma dell'array: "+ arrotonda(sommaArray(vet),2)+"\n");
-    stampa("Media dell'array: "+ arrotonda(mediaArray(vet),2)+"\n");
-    stampa("Valore minimo: "+ calcolaMinimo(vet)+"\n");
-    stampa("Valore massimo: "+ calcolaMassimo(vet)+"\n");
+    stampa(YELLOW + "Somma dell'array: "+ RESET + arrotonda(sommaArray(vet),2)+"\n");
+    stampa(YELLOW + "Media dell'array: "+ RESET + arrotonda(mediaArray(vet),2)+"\n");
+    stampa(YELLOW + "Valore minimo: "+ RESET + calcolaMinimo(vet)+"\n");
+    stampa(YELLOW + "Valore massimo: "+ RESET + calcolaMassimo(vet)+"\n");
     separatore();
   }
   //-----------------------------------------------\\
   public static void infoArray(int [] vet){
     stampaArray(vet);
-    stampa("Somma dell'array: "+ sommaArray(vet)+"\n");
-    stampa("Media dell'array: "+ arrotonda(mediaArray(vet),2)+"\n");
-    stampa("Valore minimo: "+ calcolaMinimo(vet)+"\n");
-    stampa("Valore massimo: "+ calcolaMassimo(vet)+"\n");
+    stampa(YELLOW + "Somma dell'array: "+ RESET + sommaArray(vet)+"\n");
+    stampa(YELLOW + "Media dell'array: "+ RESET + arrotonda(mediaArray(vet),2)+"\n");
+    stampa(YELLOW + "Valore minimo: "+ RESET + calcolaMinimo(vet)+"\n");
+    stampa(YELLOW + "Valore massimo: "+ RESET + calcolaMassimo(vet)+"\n");
     separatore();
   }
   //-----------------------------------------------\\
@@ -338,6 +347,41 @@ public class Dave{
   //-----------------------------------------------\\
   public static String [] creaArrayString(int dimensione){
     return new String[dimensione];
+  }
+  //-----------------------------------------------\\
+  public static void scambio(int vet[], int pos1, int pos2){
+    int a;
+    a = vet[pos2];
+    vet[pos2] = vet[pos1];
+    vet[pos1] = a;
+  }
+  //-----------------------------------------------\\
+  public static void scambio(float vet[], int pos1, int pos2){
+    float a;
+    a = vet[pos2];
+    vet[pos2] = vet[pos1];
+    vet[pos1] = a;
+  }
+  //-----------------------------------------------\\
+  public static void scambio(char vet[], int pos1, int pos2){
+    char a;
+    a = vet[pos2];
+    vet[pos2] = vet[pos1];
+    vet[pos1] = a;
+  }
+  //-----------------------------------------------\\
+  public static void scambio(String vet[], int pos1, int pos2){
+    String a;
+    a = vet[pos2];
+    vet[pos2] = vet[pos1];
+    vet[pos1] = a;
+  }
+  //-----------------------------------------------\\
+  public static void scambio(Object vet[], int pos1, int pos2){
+    Object a;
+    a = vet[pos2];
+    vet[pos2] = vet[pos1];
+    vet[pos1] = a;
   }
   //-----------------------------------------------\\
   public static char [] interoInArrayChar(int valore){
@@ -489,7 +533,7 @@ public class Dave{
     int sum = 0;
     for (int i=0;i<l;i++) {
       if(numero(s.charAt(i)))
-      sum = (int)somma(sum, (int)prodotto((int)potenza(10,l-1-i),charInInt(s.charAt(i))));
+        sum = (int)somma(sum, (int)prodotto((int)potenza(10,l-1-i),charInInt(s.charAt(i))));
     }
     return sum;
   }
@@ -627,10 +671,10 @@ public class Dave{
       }
     }
     for(;i1 <= med; i1++, i3++) a[i3] = array[i1];
-    for(;i2 < max; i2++, i3++) a[i3] = array[i2];
-    for(i3=1, i1=min; i1 < max; i1++, i3++)
-    array[i1] = a[i3];
-  }
+      for(;i2 < max; i2++, i3++) a[i3] = array[i2];
+        for(i3=1, i1=min; i1 < max; i1++, i3++)
+          array[i1] = a[i3];
+      }
   //-----------------------------------------------\\
   /** Questo é l' Insertion Sort, che abbiamo giá visto, con uan sola differenza
   ci permette di ordinare una porzione di vettore che va da min a max **/
@@ -708,33 +752,33 @@ class Cerchio {
 	private int raggio;
   private Punto centro;
   private double PI = Math.PI;
-	public Cerchio(int raggio, Punto centro) {
+  public Cerchio(int raggio, Punto centro) {
     this.raggio = raggio;
     this.centro = centro;
-	}
-	public Cerchio() {
+  }
+  public Cerchio() {
     this(1, new Punto());
-	}
-	public Cerchio(int raggio, int x, int y) {
+  }
+  public Cerchio(int raggio, int x, int y) {
     this(raggio, new Punto(x,y));
-	}
-	public int getRaggio() {
-		return raggio;
-	}
-	public void setRaggio(int raggio) {
-		this.raggio = raggio;
-	}
-	public Punto getCentro() {
+  }
+  public int getRaggio() {
+    return raggio;
+  }
+  public void setRaggio(int raggio) {
+    this.raggio = raggio;
+  }
+  public Punto getCentro() {
     return new Punto(centro.getX(), centro.getY());
 		//return this.centro;
-	}
-	public void setCentro(Punto centro) {
-		this.centro = centro;
-	}
+  }
+  public void setCentro(Punto centro) {
+    this.centro = centro;
+  }
   public String toString() {
-		return "Cerchio [raggio=" + raggio + "; centro=" + centro.toString +
+    return "Cerchio [raggio=" + raggio + "; centro=" + centro.toString +
     "; circonferenza="+this.circonferenza()+"; area="+this.area()+"]";
-	}
+  }
   public boolean equals(Cerchio comparato){
     if(comparato == null) return false;
     if(comparato == this) return true;
@@ -773,24 +817,24 @@ class Quadrato{
   public void perimetro(){
     this.perimetro = this.lato*4;
   }
-	public double getLato() {
-		return lato;
-	}
-	public double getArea() {
+  public double getLato() {
+    return lato;
+  }
+  public double getArea() {
     if(this.area == 0) area();
-		return area;
-	}
-	public double getPerimetro() {
+    return area;
+  }
+  public double getPerimetro() {
     if(perimetro == 0) perimetro();
-		return perimetro;
-	}
+    return perimetro;
+  }
   public void aggiorna(double lato){
     this.lato = lato;
     area();
     perimetro();
   }
-	public String toString() {
-		return "Quadrato [lato=" + lato + ", area=" + area + ", perimetro=" + perimetro + "]";
+  public String toString() {
+    return "Quadrato [lato=" + lato + ", area=" + area + ", perimetro=" + perimetro + "]";
   }
 }
 /*------------------------------------------*/
@@ -816,7 +860,7 @@ class Triangolo {
     this.ipotenusa = ipotenusa;
   }
   public Triangolo() {
-  this(1,1,1,true);
+    this(1,1,1,true);
   }
   public void area() {
     double altezza;
@@ -854,31 +898,31 @@ class Triangolo {
     return this.ipotenusa;
   }
   @Override
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof Triangolo)) {
-            return false;
-        }
-        Triangolo triangolo = (Triangolo) o;
-        return catetoA == triangolo.catetoA && catetoB == triangolo.catetoB && ipotenusa == triangolo.ipotenusa && area == triangolo.area && perimetro == triangolo.perimetro;
+  public boolean equals(Object o) {
+    if (o == this)
+      return true;
+    if (!(o instanceof Triangolo)) {
+      return false;
+    }
+    Triangolo triangolo = (Triangolo) o;
+    return catetoA == triangolo.catetoA && catetoB == triangolo.catetoB && ipotenusa == triangolo.ipotenusa && area == triangolo.area && perimetro == triangolo.perimetro;
   }
   public String toString(int arrotondamento) {
     return "{" +
-      "cateto A = " + Dave.arrotonda(getCatetoA(), arrotondamento) +
-      ",  cateto B = " + Dave.arrotonda(getCatetoB(), arrotondamento) +
-      ",  ipotenusa = " + Dave.arrotonda(getIpotenusa(), arrotondamento) +
-      ",  area = " + Dave.arrotonda(getArea(), arrotondamento) +
-      ",  perimetro = " + Dave.arrotonda(getPerimetro(), arrotondamento) +
-      "}";
+    "cateto A = " + Dave.arrotonda(getCatetoA(), arrotondamento) +
+    ",  cateto B = " + Dave.arrotonda(getCatetoB(), arrotondamento) +
+    ",  ipotenusa = " + Dave.arrotonda(getIpotenusa(), arrotondamento) +
+    ",  area = " + Dave.arrotonda(getArea(), arrotondamento) +
+    ",  perimetro = " + Dave.arrotonda(getPerimetro(), arrotondamento) +
+    "}";
   }
   public String toString() {
     return "{" +
-      "cateto A = " + getCatetoA() +
-      ",  cateto B = " + getCatetoB() +
-      ",  ipotenusa = " + getIpotenusa() +
-      ",  area = " + getArea() +
-      ",  perimetro = " + getPerimetro() +
-      "}";
+    "cateto A = " + getCatetoA() +
+    ",  cateto B = " + getCatetoB() +
+    ",  ipotenusa = " + getIpotenusa() +
+    ",  area = " + getArea() +
+    ",  perimetro = " + getPerimetro() +
+    "}";
   }
 }
