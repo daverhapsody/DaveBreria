@@ -12,22 +12,5 @@ class Test extends Dave {
 		cifrarioCesare(5, vet);
 		infoArray(vet);
 	} 
-	public static void cifrarioCesare(int quanto, int vet[]){
-		if(quanto < vet.length){
-			int a = vet.length;
-			int b = a;
-			int i, j;
-			for(int c=0; c<quanto; c++){
-				a = vet.length; 
-				b = a;
-				for (j=0; j<b-1; j++) {			
-					for (i=0; i<a; i++) {
-						if(i==a-1) scambio(vet, i-1, i);
-					} 
-					a = a - 1;
-				}
-			}
-		}
-	}
 }
 
